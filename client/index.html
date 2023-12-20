@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Event Greetings AI</title>
+</head>
+
+<body>
+    <header>
+        <h1>Event Greetings AI</h1>
+    </header>
+
+    <div class="container">
+        <div id="inputs">
+            <label for="event">Select an event:</label>
+            <select id="event">
+                <option value="" disabled selected>Select an event:</option>
+                <option value="birthday">Birthday</option>
+                <option value="wedding">Wedding</option>
+                <option value="graduation">Graduation</option>
+            </select>
+           
+            <!-- Additional questions based on the selected event -->
+            <div id="additionalQuestions"></div>
+
+            <!-- General questions -->
+            <label for="type">Type of blessing (song, short, long, letter):</label>
+            <input type="text" id="type" placeholder="type" />
+
+            <label for="atmosphere">Atmosphere (happy, entertaining, funny):</label>
+            <input type="text" id="atmosphere" placeholder="atmosphere" />
+        </div>
+
+        <div id="selectedOptions"></div>
+    </div>
+
+    <div id="generatedGreeting"></div>
+
+    <button id="generateButton">Write me a greeting</button>
+    <button id="changeGreetingButton">I want something different</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

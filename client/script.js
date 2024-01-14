@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const eventSelect = document.getElementById('event');
     const additionalQuestionsDiv = document.getElementById('additionalQuestions');
-    const typeInput = document.getElementById('type');
-    const atmosphereInput = document.getElementById('atmosphere');
+    const greetingTypeInput = document.getElementById('greetingType');
+    const environmentInput = document.getElementById('environment');
     const selectedOptionsDiv = document.getElementById('selectedOptions');
     const generatedGreetingDiv = document.getElementById('generatedGreeting');
     const generateButton = document.getElementById('generateButton');
@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const age = document.getElementById('age') ? document.getElementById('age').value : '';
         const relation = document.getElementById('relation') ? document.getElementById('relation').value : '';
         const degree = document.getElementById('degree') ? document.getElementById('degree').value : '';
-        const type = typeInput.value;
-        const atmosphere = atmosphereInput.value;
+        const greetingType = greetingTypeInput.value;
+        const environment = environmentInput.value;
 
         selectedOptionsDiv.innerHTML = `<p><b>Event:</b> ${selectedEvent}</p>`;
         if (age) selectedOptionsDiv.innerHTML += `<p><b>Age:</b> ${age}</p>`;
         if (relation) selectedOptionsDiv.innerHTML += `<p><b>Relation:</b> ${relation}</p>`;
         if (degree) selectedOptionsDiv.innerHTML += `<p><b>Degree:</b> ${degree}</p>`;
-        if (type) selectedOptionsDiv.innerHTML += `<p><b>Type:</b> ${type}</p>`;
-        if (atmosphere) selectedOptionsDiv.innerHTML += `<p><b>Atmosphere:</b> ${atmosphere}</p>`;
+        if (greetingType) selectedOptionsDiv.innerHTML += `<p><b>Type:</b> ${greetingType}</p>`;
+        if (environment) selectedOptionsDiv.innerHTML += `<p><b>Environment:</b> ${environment}</p>`;
 
         try {
             const response = await fetch('http://localhost:3000/generate-greeting', {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ event: selectedEvent, age, relation, degree, type, atmosphere }),
+                body: JSON.stringify({ event: selectedEvent, age, relation, degree, type: greetingType, atmosphere: environment }),
             });
 
             if (!response.ok) {

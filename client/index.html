@@ -5,33 +5,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Event Greetings AI</title>
+    <title>Generate Greetings</title>
 </head>
 
 <body>
     <header>
-        <h1>Event Greetings AI</h1>
+        <h1>Generate Greetings</h1>
     </header>
 
     <div class="container">
         <div id="inputs">
-            <label for="event">Select an event:</label>
+            <label for="event">Select an occasion:</label>
             <select id="event">
-                <option value="" disabled selected>Select an event:</option>
+                <option value="" disabled selected>Select an occasion:</option>
                 <option value="birthday">Birthday</option>
                 <option value="wedding">Wedding</option>
                 <option value="graduation">Graduation</option>
             </select>
-           
-            <!-- Additional questions based on the selected event -->
+            
+            <!-- Additional questions based on the selected occasion -->
             <div id="additionalQuestions"></div>
 
             <!-- General questions -->
-            <label for="type">Type of blessing (song, short, long, letter):</label>
-            <input type="text" id="type" placeholder="type" />
+            <label for="greetingType">Type of greeting (song, short, long, letter):</label>
+            <input type="text" id="greetingType" placeholder="type" />
 
-            <label for="atmosphere">Atmosphere (happy, entertaining, funny):</label>
-            <input type="text" id="atmosphere" placeholder="atmosphere" />
+            <label for="environment">Environment (happy, entertaining, funny):</label>
+            <input type="text" id="environment" placeholder="environment" />
         </div>
 
         <div id="selectedOptions"></div>
@@ -39,8 +39,8 @@
 
     <div id="generatedGreeting"></div>
 
-    <button id="generateButton">Write me a greeting</button>
-    <button id="changeGreetingButton">I want something different</button>
+    <button id="generateButton">Generate Greeting</button>
+    <button id="changeGreetingButton">I want to try Another Option</button>
 
     <script src="script.js"></script>
 </body>
